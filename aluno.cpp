@@ -8,6 +8,17 @@
 #include "aluno.hpp"
 using namespace std;
 
+/*void Aluno::Conseguir(){
+    cin>>_nome;
+    cin>>_matricula;
+    while(1){
+        int a2;
+        cin>>a2;
+        if (a2==(-1)) break;
+        _notas.push_back(a2);
+    }
+
+}*/
 Aluno::Aluno(string nome,int matricula, vector<int> notas){
 
     _nome=nome;
@@ -15,20 +26,26 @@ Aluno::Aluno(string nome,int matricula, vector<int> notas){
     _notas=notas;
 
 }
-void Aluno::Media(){
+
+double Aluno::Media(){
    double x;
    int tamanho= _notas.size();
    for (auto it = _notas.begin(); it !=_notas.end(); ++it){
-        x=+*it;
+        x=x+*it;
     }
-    cout<<x/tamanho;
+    return x/tamanho;
 }
 
-/*void Aluno::Maior_Nota(vector<double> notas){
-   _saldo -= valor;
-   cout<<"saque efetuado"<<endl;
+int Aluno::Maior_Nota(){
+   
+   sort(_notas.begin(),_notas.end());
+   int a=*_notas.end();
+   return a;
 }
 
 void Aluno::Imprime(){
-    cout << _nome << " " << _matricula << _notas << endl;
-}*/
+    cout<<_matricula<<' '<<_nome;
+    for (auto it = _notas.begin(); it !=_notas.end(); ++it){
+        cout << ' ' << *it;
+    }
+}

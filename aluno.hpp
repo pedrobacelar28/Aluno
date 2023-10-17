@@ -16,8 +16,9 @@ struct Aluno {
     vector<int> _notas;
     
     Aluno(string nome,int matricula, vector<int> notas);
-    void Media();
-    void Maior_Nota();
+    //void Conseguir();
+    double Media();
+    int Maior_Nota();
     void Imprime();
 
     
